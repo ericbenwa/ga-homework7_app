@@ -1,4 +1,4 @@
-<h1>Boston, MA Store</h1>
+<h1><%= "#{Store.find(1).city}, #{Store.find(1).state}" %> Store</h1>
 
 <p>Click on any of the products to see more details.<br />
 <%= link_to "Add Product", "#" %></p>
