@@ -1,0 +1,14 @@
+// Place all the styles related to the Stores controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.store, .product {
+	background: #DDD;
+	border-radius: 3px;
+	float: left;
+	height: 125px;
+	margin: 25px;
+	padding: 25px;
+	text-align: center;
+	width: 350px;
+}
