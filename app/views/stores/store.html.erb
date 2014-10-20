@@ -1,12 +1,10 @@
-<h1><%= "#{Store.find(1).city}, #{Store.find(1).state}" %> Store</h1>
+<h1><%= "#{@store.city}, #{@store.state}" %> Store</h1>
 
 <p>Click on any of the products to see more details.<br />
 <%= link_to "Add Product", "#" %></p>
 
-<div class="product">
-	<p><%= link_to "CCM SR Hockey Stick", "/stores/1/products/1" %></p>
-</div>
-
-<div class="product">
-	<p><%= link_to "RBK 6k Skates", "/stores/1/products/2" %></p>
-</div>
+<% @products.each do |product| %>
+	<div class="product">
+		<p><%= link_to "#{product.name}", "/stores/1/products/1" %></p>
+	</div>
+<% end %>
