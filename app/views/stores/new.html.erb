@@ -1,0 +1,9 @@
+<h1>Add Store</h1>
+
+<%= form_for @store, url: {action: "create"} do |f| %>
+	<p><%= f.text_field(:city) %></p>
+	<p><%= f.text_field(:state) %></p>
+
+	<%= submit_tag("Add Store") %>
+
+<% end %>

@@ -7,8 +7,12 @@ Rails.application.routes.draw do
   root "static_pages#index"
 
   get "/stores" => "stores#index"
+  get "/stores/new" => "stores#new"
+  post "/stores/create" => "stores#create"
   get "/stores/:id_store" => "stores#store"
-  get "/stores/:id_store/products/:id_product" => "stores#product"
+  get "/stores/:id_store/products/new" => "products#new"
+  post "/stores/:id_store/products/create" => "products#create"
+  get "/stores/:id_store/products/:id_product" => "products#product"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

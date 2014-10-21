@@ -1,0 +1,10 @@
+<h1>Add Product</h1>
+
+<%= form_for @product, url: {action: "create"} do |f| %>
+	<p><%= f.text_field(:name) %></p>
+	<p><%= f.text_field(:description) %></p>
+	<p><%= f.text_field(:price) %></p>
+
+	<%= submit_tag("Add Product") %>
+
+<% end %>
