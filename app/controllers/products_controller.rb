@@ -1,7 +1,11 @@
 class ProductsController < ApplicationController
 
+	def index
+		@products = Product.all
+	end
+
 	def product
-		@product = Product.find(params[:id_product])
+		@product = Product.find(params[:product_id])
 	end
 
 	def new
@@ -9,8 +13,9 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		@product = Product.new(params[:product].permit(:name, :description, :price, 1)) # Need to dynamically insert store id.
-		@product.save
+		# @store = Store.find(params[:store_id])
+		@product = Product.new(params[:product].permit(:name, :description, :price, :store_id))
+		@product.save!
 	end
 
 end

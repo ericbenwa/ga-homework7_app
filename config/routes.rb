@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get "/stores" => "stores#index"
   get "/stores/new" => "stores#new"
   post "/stores/create" => "stores#create"
-  get "/stores/:id_store" => "stores#store"
-  get "/stores/:id_store/products/new" => "products#new"
-  post "/stores/:id_store/products/create" => "products#create"
-  get "/stores/:id_store/products/:id_product" => "products#product"
+  get "/stores/:store_id" => "stores#store"
+  get "/stores/:store_id/products/new" => "products#new"
+  post "/stores/:store_id/products/create" => "products#create"
+  get "/stores/:store_id/products/:product_id" => "products#product"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

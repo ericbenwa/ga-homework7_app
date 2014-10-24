@@ -9,12 +9,11 @@ class StoresController < ApplicationController
 	end
 
 	def create
-		@store = Store.new(params[:store].permit(:city, :state))
-		@store.save
+		@store = Store.create(params[:store].permit(:city, :state))
 	end
 
 	def store
-		@store = Store.find(params[:id_store])
-		@products = Product.all
+		@store = Store.find(params[:store_id])
+		@products = Product.where(store_id: params[:store_id])
 	end
 end
