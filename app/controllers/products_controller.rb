@@ -13,9 +13,10 @@ class ProductsController < ApplicationController
 	end
 
 	def create
-		# @store = Store.find(params[:store_id])
+		@store = Store.find(params[:store_id])
 		@product = Product.new(params[:product].permit(:name, :description, :price, :store_id))
 		@product.save!
+		redirect_to("/stores/") # Rather redirect to the actual product created.
 	end
 
 end
