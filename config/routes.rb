@@ -6,13 +6,17 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root "static_pages#index"
 
-  get "/stores" => "stores#index"
-  get "/stores/new" => "stores#new"
-  post "/stores/create" => "stores#create"
-  get "/stores/:store_id" => "stores#store"
-  get "/stores/:store_id/products/new" => "products#new"
-  post "/stores/:store_id/products/create" => "products#create"
-  get "/stores/:store_id/products/:product_id" => "products#product"
+  # get "/stores" => "stores#index"
+  # get "/stores/new" => "stores#new"
+  # post "/stores/create" => "stores#create"
+  # get "/stores/:store_id" => "stores#store"
+  # get "/stores/:store_id/products/new" => "products#new"
+  # post "/stores/:store_id/products/create" => "products#create"
+  # get "/stores/:store_id/products/:product_id" => "products#product"
+
+  resources :stores do 
+    resources :products
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

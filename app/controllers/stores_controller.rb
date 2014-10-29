@@ -10,11 +10,11 @@ class StoresController < ApplicationController
 
 	def create
 		@store = Store.create(params[:store].permit(:city, :state))
-		redirect_to("/stores/") # Rather redirect to the actual store created.
+		redirect_to @store
 	end
 
-	def store
-		@store = Store.find(params[:store_id])
-		@products = Product.where(store_id: params[:store_id])
+	def show
+		@store = Store.find(params[:id])
+		@products = Product.where(store_id: @store.id)
 	end
 end

@@ -1,0 +1,10 @@
+<h1><%= "#{@store.city}, #{@store.state} Store" %></h1>
+
+<p>Click on any of the products to see more details.<br />
+<%= link_to "Add Product", new_store_product_path(@store) %></p>
+
+<% @products.each do |product| %>
+	<div class="product">
+		<p><%= link_to "#{product.name}", store_product_path(@store, product) %></p>
+	</div>
+<% end %>

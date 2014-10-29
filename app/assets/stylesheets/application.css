@@ -16,4 +16,9 @@
 
  body {
  	font-family: Helvetica;
+ 	color: #000;
+ }
+
+ a {
+ 	color: #578AC3;
  }

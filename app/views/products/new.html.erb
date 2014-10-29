@@ -1,11 +1,13 @@
-<h1>Add Hockey Product to Store</h1>
+<h1>Add Product to <%= "#{@store.city}, #{@store.state}" %> Store</h1>
 
-<%= form_for @product, url: {action: "create"} do |f| %>
-	<p>Name <%= f.text_field(:name) %></p>
-	<p>Description <%= f.text_field(:description) %></p>
-	<p>Price <%= f.text_field(:price) %></p>
-	<p>Store ID <%= f.text_field(:store_id) %></p>
+<%#= form_for @product, url: {action: "create"} do |f| %>
+<%= form_for([@store, @product]) do |f| %> <!-- Why on products do I need [@store, @product]? -->
+	<p><%= f.label(:name) %><br />
+	<%= f.text_field(:name) %></p>
+	<p><%= f.label(:description) %><br />
+	<%= f.text_field(:description) %></p>
+	<p><%= f.label(:price) %><br />
+	<%= f.text_field(:price) %></p>
 
 	<%= submit_tag("Add Product") %>
-
 <% end %>

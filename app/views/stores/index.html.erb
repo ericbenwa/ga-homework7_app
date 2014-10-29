@@ -1,10 +1,10 @@
 <h1>All Hockey Stores</h1>
 
 <p>Visit the store closest to you to see available products.<br />
-<%= link_to "Add Store", "/stores/new" %></p>
+<%= link_to "Add Store", new_store_path %></p>
 
 <% @stores.each do |store| %>
 	<div class="store">
-		<p><%= link_to "#{store.city}, #{store.state}", "/stores/#{store.id}" %></p>
+		<p><%= link_to "#{store.city}, #{store.state}", store_path(store.id) %></p>
 	</div>
 <% end %>
